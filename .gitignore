@@ -1,0 +1,13 @@
+node_modules/
+.next/
+out/
+.env*
+!.env.example
+
+# local development files
+.DS_Store
+*.log
+
+# deployment and editor metadata
+.vercel/
+.vscode/
