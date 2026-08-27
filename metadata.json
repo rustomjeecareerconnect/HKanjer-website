@@ -1,0 +1,6 @@
+{
+  "name": "Hanif Kanjer Website",
+  "description": "Personal and academic website for Hanif Kanjer featuring articles, research, teaching, books, and testimonials.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

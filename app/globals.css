@@ -1,0 +1,111 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply overflow-x-hidden;
+  }
+
+  ::selection {
+    @apply bg-accent/30 text-accent;
+  }
+
+  /* Custom Scrollbar */
+  ::-webkit-scrollbar {
+    @apply w-2;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-primary;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-accent/40 rounded-full;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-accent/60;
+  }
+}
+
+@layer components {
+  /* Gold gradient text */
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gold-gradient;
+  }
+
+  /* Gold line accent */
+  .gold-line {
+    @apply w-16 h-1 bg-gold-gradient rounded-full;
+  }
+
+  .gold-line-center {
+    @apply w-16 h-1 bg-gold-gradient rounded-full mx-auto;
+  }
+
+  /* Glass card effect */
+  .glass-card {
+    @apply bg-surface/50 dark:bg-surface/50 backdrop-blur-md border border-accent/10 rounded-2xl;
+  }
+
+  /* Hover glow effect */
+  .hover-glow {
+    @apply transition-all duration-300;
+  }
+
+  .hover-glow:hover {
+    @apply shadow-[0_0_30px_rgba(212,163,89,0.15)];
+  }
+
+  /* Section padding */
+  .section-padding {
+    @apply py-16 md:py-24 lg:py-32;
+  }
+
+  /* Container */
+  .container-custom {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  /* Page hero */
+  .page-hero {
+    @apply relative pt-32 pb-16 md:pt-40 md:pb-24 overflow-hidden;
+  }
+
+  /* Card base */
+  .card-base {
+    @apply bg-white dark:bg-surface rounded-2xl p-6 md:p-8
+      border border-gray-100 dark:border-accent/10
+      hover:border-accent/30 dark:hover:border-accent/30
+      transition-all duration-300 hover-glow;
+  }
+}
+
+@layer utilities {
+  /* Animated underline */
+  .animated-underline {
+    @apply relative;
+  }
+
+  .animated-underline::after {
+    content: '';
+    @apply absolute bottom-0 left-0 w-0 h-0.5 bg-accent transition-all duration-300;
+  }
+
+  .animated-underline:hover::after {
+    @apply w-full;
+  }
+
+  /* Fade in animation with delay utilities */
+  .delay-100 { animation-delay: 100ms; }
+  .delay-200 { animation-delay: 200ms; }
+  .delay-300 { animation-delay: 300ms; }
+  .delay-400 { animation-delay: 400ms; }
+  .delay-500 { animation-delay: 500ms; }
+  .delay-600 { animation-delay: 600ms; }
+}
