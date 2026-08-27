@@ -128,82 +128,82 @@ export default function About() {
       {/* Section 2: Comprehensive Official Biography */}
       <section className="section-padding bg-secondary-light dark:bg-secondary">
         <div className="container-custom">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
-            <div className="lg:col-span-5 space-y-6 sticky top-28">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
+            <div className="lg:col-span-5 space-y-6 relative lg:sticky lg:top-28 z-10">
               <ScrollAnimation>
-                <div className="relative aspect-[3/4] w-full max-w-md mx-auto rounded-3xl overflow-hidden border-4 border-accent/40 shadow-2xl group">
+                <div className="relative aspect-[4/5] sm:aspect-[3/4] w-full max-w-xs sm:max-w-sm lg:max-w-md mx-auto rounded-3xl overflow-hidden border-2 sm:border-4 border-accent/40 shadow-2xl group">
                   <Image
                     src="/images/dr-hanif-kanjer-2025-portrait.jpg"
                     alt="Prof. Dr. Hanif Kanjer"
                     fill
                     priority
-                    sizes="(max-width: 1024px) 100vw, 400px"
+                    sizes="(max-width: 640px) 320px, (max-width: 1024px) 380px, 400px"
                     className="object-cover object-top filter contrast-[1.03] group-hover:scale-105 transition-transform duration-500"
                     referrerPolicy="no-referrer"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent pointer-events-none"></div>
-                  <div className="absolute bottom-4 left-4 right-4 bg-surface-light/95 dark:bg-primary/95 backdrop-blur-md p-4 rounded-2xl border border-accent/30 shadow-lg">
-                    <p className="text-base font-heading font-bold text-text-dark dark:text-text">Dr. Hanif Kanjer</p>
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/15 to-transparent pointer-events-none"></div>
+                  <div className="absolute bottom-3 left-3 right-3 sm:bottom-4 sm:left-4 sm:right-4 bg-surface-light/95 dark:bg-primary/95 backdrop-blur-md p-3 sm:p-4 rounded-xl sm:rounded-2xl border border-accent/30 shadow-lg">
+                    <p className="text-sm sm:text-base font-heading font-bold text-text-dark dark:text-text">Dr. Hanif Kanjer</p>
                     <p className="text-xs text-accent font-semibold">Founder Director & Dean, RCIS</p>
-                    <p className="text-[11px] text-text-dark-muted dark:text-text-muted mt-1">MBA (London Business School) • PhD (Univ of Mumbai) • Tuck Exchange (USA)</p>
+                    <p className="text-[10px] sm:text-[11px] text-text-dark-muted dark:text-text-muted mt-1 leading-tight">MBA (London Business School) • PhD (Univ of Mumbai) • Tuck Exchange (USA)</p>
                   </div>
                 </div>
               </ScrollAnimation>
 
               {/* Quick Institutional Stats */}
               <ScrollAnimation delay={0.2}>
-                <div className="grid grid-cols-3 gap-3 max-w-md mx-auto">
-                  <div className="card-base p-3 text-center rounded-2xl border border-accent/20 bg-surface-light dark:bg-surface">
-                    <p className="font-heading text-xl font-bold text-accent">10,500+</p>
-                    <p className="text-[10px] text-text-dark-muted dark:text-text-muted">Students Led</p>
+                <div className="grid grid-cols-3 gap-2 sm:gap-3 max-w-xs sm:max-w-sm lg:max-w-md mx-auto">
+                  <div className="card-base p-2 sm:p-3 text-center rounded-xl sm:rounded-2xl border border-accent/20 bg-surface-light dark:bg-surface">
+                    <p className="font-heading text-lg sm:text-xl font-bold text-accent">10,500+</p>
+                    <p className="text-[9px] sm:text-[10px] text-text-dark-muted dark:text-text-muted">Students Led</p>
                   </div>
-                  <div className="card-base p-3 text-center rounded-2xl border border-accent/20 bg-surface-light dark:bg-surface">
-                    <p className="font-heading text-xl font-bold text-accent">425+</p>
-                    <p className="text-[10px] text-text-dark-muted dark:text-text-muted">Faculty & Teachers</p>
+                  <div className="card-base p-2 sm:p-3 text-center rounded-xl sm:rounded-2xl border border-accent/20 bg-surface-light dark:bg-surface">
+                    <p className="font-heading text-lg sm:text-xl font-bold text-accent">425+</p>
+                    <p className="text-[9px] sm:text-[10px] text-text-dark-muted dark:text-text-muted">Faculty</p>
                   </div>
-                  <div className="card-base p-3 text-center rounded-2xl border border-accent/20 bg-surface-light dark:bg-surface">
-                    <p className="font-heading text-xl font-bold text-accent">15+ Nations</p>
-                    <p className="text-[10px] text-text-dark-muted dark:text-text-muted">Global Consulting</p>
+                  <div className="card-base p-2 sm:p-3 text-center rounded-xl sm:rounded-2xl border border-accent/20 bg-surface-light dark:bg-surface">
+                    <p className="font-heading text-lg sm:text-xl font-bold text-accent">15+ Nations</p>
+                    <p className="text-[9px] sm:text-[10px] text-text-dark-muted dark:text-text-muted">Consulting</p>
                   </div>
                 </div>
               </ScrollAnimation>
             </div>
 
-            <div className="lg:col-span-7 prose prose-lg dark:prose-invert max-w-none text-text-dark-muted dark:text-text-muted font-body space-y-6">
+            <div className="lg:col-span-7 prose prose-lg dark:prose-invert max-w-none text-text-dark-muted dark:text-text-muted font-body space-y-5 sm:space-y-6">
               <ScrollAnimation delay={0.2}>
                 <span className="text-xs font-bold uppercase tracking-widest text-accent block">Executive Biography</span>
-                <h2 className="font-heading text-3xl md:text-4xl font-bold text-text-dark dark:text-text mt-1 mb-6">
+                <h2 className="font-heading text-2xl sm:text-3xl md:text-4xl font-bold text-text-dark dark:text-text mt-1 mb-4 sm:mb-6">
                   Bridging Global Business Strategy & Transformative Education
                 </h2>
                 
-                <p className="leading-relaxed">
+                <p className="text-sm sm:text-base leading-relaxed">
                   In the ever-evolving world of business and education, few individuals manage to bridge both domains with equal brilliance. <strong>Dr. Hanif Kanjer</strong>, Founder Director and Dean of Rustomjee Cambridge International School and Junior College, stands out as one such visionary. A dynamic leader, globally educated scholar, and passionate educator, Dr. Kanjer’s journey is a testament to the power of purpose-driven leadership.
                 </p>
 
-                <p className="leading-relaxed">
+                <p className="text-sm sm:text-base leading-relaxed">
                   Holding an MBA from the prestigious <strong>London Business School</strong>, Europe’s top-ranked business institution, and a PhD in Management from the University of Mumbai, Dr. Kanjer has always believed that true education transcends borders. Selected for an elite exchange program at the Ivy League’s <strong>Amos Tuck School of Business, Dartmouth, USA</strong>, he was exposed early on to the world’s best minds in business thinking and innovation.
                 </p>
 
-                <div className="p-6 rounded-2xl bg-accent/10 border-l-4 border-accent my-6">
-                  <h3 className="font-heading font-bold text-lg text-text-dark dark:text-text mb-2">Global Consulting Across Continents</h3>
-                  <p className="text-sm text-text-dark-muted dark:text-text-muted leading-relaxed m-0">
+                <div className="p-4 sm:p-6 rounded-2xl bg-accent/10 border-l-4 border-accent my-4 sm:my-6">
+                  <h3 className="font-heading font-bold text-base sm:text-lg text-text-dark dark:text-text mb-2">Global Consulting Across Continents</h3>
+                  <p className="text-xs sm:text-sm text-text-dark-muted dark:text-text-muted leading-relaxed m-0">
                     Dr. Kanjer’s early career was shaped by nearly a decade in the corporate world, working across continents with industry giants like <strong>Giordano Fashions, Business Consulting Group, Unilever Gulf, 3M UK, Ernst & Young, and Infosys</strong>. His global consulting work took him to over 15 countries across North America, Europe, the Middle East, and Asia, where he contributed to business process reengineering, strategic turnarounds, and new market development.
                   </p>
                 </div>
 
-                <p className="leading-relaxed">
+                <p className="text-sm sm:text-base leading-relaxed">
                   Yet, in 2002, he made a bold and inspiring choice to return to India and channel his global expertise into building institutions of excellence in education. In 2004, he served as Consulting Director instrumental in establishing the first international campus of <strong>S P Jain School of Global Management in Dubai</strong>.
                 </p>
 
-                <p className="leading-relaxed">
+                <p className="text-sm sm:text-base leading-relaxed">
                   From directing Rustomjee International School with 3,500 students to now leading a vibrant learning community of <strong>over 10,500 students, 425 teachers, and 180 staff</strong>, his leadership is both expansive and deeply personal. He went on to found the <strong>Rustomjee Cambridge International School in 2006</strong>, now a benchmark for international curriculum schools in India, and subsequently established <strong>Rustomjee Business School</strong>, delivering corporate training and executive management programs.
                 </p>
 
-                <p className="leading-relaxed">
+                <p className="text-sm sm:text-base leading-relaxed">
                   A <strong>Master Trainer from Cambridge International</strong>, prolific writer, and speaker, Dr. Kanjer has contributed thought-provoking articles to <em>Business Standard, Economic Times, Financial Express</em>, and more. His first book, <em>All the Right Answers</em>, published by Macmillan in 2005, showcased his talent for breaking down complex business ideas into accessible insights.
                 </p>
 
-                <p className="leading-relaxed">
+                <p className="text-sm sm:text-base leading-relaxed">
                   He has co-authored the Indian adaptation of <strong>Strategic Management: Concepts and Cases (18th Edition)</strong> published by Pearson alongside Dr. Fred David and Dr. Forest David. The Indian adaptation contextualizes core strategy concepts with rich, real-world Indian business cases, making it an essential resource for students, educators, and business leaders alike.
                 </p>
               </ScrollAnimation>
