@@ -169,7 +169,7 @@ export default function ServicesPage() {
             <p className="text-xl text-text-dark-muted dark:text-text-muted mb-10 max-w-2xl mx-auto">
               Let's discuss how we can address your complex business challenges and drive growth.
             </p>
-            <Link href="/contact" className="inline-block bg-accent hover:bg-accent/90 text-primary-light font-bold py-4 px-10 rounded-lg transition-all hover:scale-105 duration-300 shadow-lg">
+            <Link href="/contact" className="inline-block bg-accent hover:bg-accent/90 text-primary font-bold py-4 px-10 rounded-lg transition-all hover:scale-105 duration-300 shadow-lg">
               Discuss Your Project
             </Link>
           </ScrollAnimation>

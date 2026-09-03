@@ -299,7 +299,7 @@ export default function About() {
       {/* Section 6: Career Timeline */}
       <section className="section-padding bg-secondary-light dark:bg-secondary">
         <div className="container-custom">
-          <SectionHeading title="Career Milestones & Chronology" center />
+          <SectionHeading title="Career Milestones & Chronology" centered />
           
           <div className="relative max-w-4xl mx-auto mt-16">
             {/* Center Line */}

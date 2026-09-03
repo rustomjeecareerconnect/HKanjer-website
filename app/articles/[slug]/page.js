@@ -6,13 +6,15 @@ export function generateStaticParams() {
   return articles.map((article) => ({ slug: article.slug }));
 }
 
-export function generateMetadata({ params }) {
-  const article = articles.find((a) => a.slug === params.slug);
+export async function generateMetadata({ params }) {
+  const { slug } = await params;
+  const article = articles.find((a) => a.slug === slug);
   return { title: article?.title, description: article?.excerpt };
 }
 
-export default function ArticleDetail({ params }) {
-  const article = articles.find((a) => a.slug === params.slug);
+export default async function ArticleDetail({ params }) {
+  const { slug } = await params;
+  const article = articles.find((a) => a.slug === slug);
 
   if (!article) {
     return <div className="container-custom py-20 text-center text-text-dark dark:text-text">Article not found.</div>;
@@ -21,6 +23,10 @@ export default function ArticleDetail({ params }) {
   const relatedArticles = articles
     .filter(a => a.category === article.category && a.slug !== article.slug)
     .slice(0, 2);
+
+  const articleUrl = `https://www.hanifkanjer.com/articles/${article.slug}`;
+  const encodedTitle = encodeURIComponent(article.title);
+  const encodedUrl = encodeURIComponent(articleUrl);
 
   return (
     <div className="min-h-screen py-20 bg-primary-light dark:bg-primary">
@@ -53,15 +59,33 @@ export default function ArticleDetail({ params }) {
         <div className="border-t border-accent/20 pt-8 mb-16">
           <h3 className="text-xl font-heading text-text-dark dark:text-text mb-4">Share this article</h3>
           <div className="flex gap-4">
-            <button className="text-text-dark-muted dark:text-text-muted hover:text-[#1DA1F2] transition-colors p-2 bg-surface-light dark:bg-surface rounded-full">
+            <a
+              href={`https://twitter.com/intent/tweet?text=${encodedTitle}&url=${encodedUrl}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Share on X / Twitter"
+              className="text-text-dark-muted dark:text-text-muted hover:text-[#1DA1F2] transition-colors p-2 bg-surface-light dark:bg-surface rounded-full"
+            >
               <FaTwitter size={20} />
-            </button>
-            <button className="text-text-dark-muted dark:text-text-muted hover:text-[#0A66C2] transition-colors p-2 bg-surface-light dark:bg-surface rounded-full">
+            </a>
+            <a
+              href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodedUrl}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Share on LinkedIn"
+              className="text-text-dark-muted dark:text-text-muted hover:text-[#0A66C2] transition-colors p-2 bg-surface-light dark:bg-surface rounded-full"
+            >
               <FaLinkedin size={20} />
-            </button>
-            <button className="text-text-dark-muted dark:text-text-muted hover:text-[#25D366] transition-colors p-2 bg-surface-light dark:bg-surface rounded-full">
+            </a>
+            <a
+              href={`https://api.whatsapp.com/send?text=${encodedTitle}%20${encodedUrl}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Share on WhatsApp"
+              className="text-text-dark-muted dark:text-text-muted hover:text-[#25D366] transition-colors p-2 bg-surface-light dark:bg-surface rounded-full"
+            >
               <FaWhatsapp size={20} />
-            </button>
+            </a>
           </div>
         </div>
 

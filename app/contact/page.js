@@ -9,7 +9,8 @@ export default function ContactPage() {
     name: '',
     email: '',
     subject: 'General Inquiry',
-    message: ''
+    message: '',
+    _gotcha: ''
   });
   const [status, setStatus] = useState('idle'); // idle, submitting, success, error
   const [errorMessage, setErrorMessage] = useState('');
@@ -33,7 +34,7 @@ export default function ContactPage() {
       
       if (res.ok) {
         setStatus('success');
-        setFormData({ name: '', email: '', subject: 'General Inquiry', message: '' });
+        setFormData({ name: '', email: '', subject: 'General Inquiry', message: '', _gotcha: '' });
       } else {
         setStatus('error');
         setErrorMessage(data.error || 'Something went wrong.');
@@ -80,6 +81,18 @@ export default function ContactPage() {
                   </div>
                 ) : (
                   <form onSubmit={handleSubmit} className="space-y-6">
+                    {/* Hidden Honeypot field for bot spam trapping */}
+                    <input
+                      type="text"
+                      name="_gotcha"
+                      value={formData._gotcha}
+                      onChange={handleChange}
+                      className="hidden"
+                      tabIndex={-1}
+                      autoComplete="off"
+                      aria-hidden="true"
+                    />
+
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                       <div>
                         <label htmlFor="name" className="block text-sm font-medium text-text-dark-muted dark:text-text-muted mb-2">Full Name *</label>

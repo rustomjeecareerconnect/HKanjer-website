@@ -134,7 +134,10 @@ export default function ResearchPage() {
             <p className="text-text-dark-muted dark:text-text-muted font-body mb-8">
               For Dr. Hanif Kanjer&apos;s published book titles, co-authored Pearson curriculum editions, and ISBN references, explore the dedicated Books catalog.
             </p>
-            <Link href="/books" className="btn-primary inline-flex items-center gap-2">
+            <Link
+              href="/books"
+              className="bg-accent hover:bg-accent/90 text-primary font-heading font-medium px-6 py-3 rounded-xl transition-all shadow-md shadow-accent/20 inline-flex items-center gap-2"
+            >
               <span>View Published Books</span>
               <span>&rarr;</span>
             </Link>

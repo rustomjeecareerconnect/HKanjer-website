@@ -294,7 +294,7 @@ export default function Home() {
       {/* Section 5: Testimonials Preview */}
       <section className="section-padding bg-primary-light dark:bg-primary">
         <div className="container-custom text-center">
-          <SectionHeading title="Verified Evaluations" subtitle="Documented feedback and ratings from premier institutions" center />
+          <SectionHeading title="Verified Evaluations" subtitle="Documented feedback and ratings from premier institutions" centered />
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
             {featuredTestimonials.map((t, i) => (

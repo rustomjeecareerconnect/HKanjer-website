@@ -107,10 +107,11 @@ export default function MediaPage() {
                   For media inquiries, interviews, and expert commentary requests. We typically respond within 24-48 hours.
                 </p>
               </div>
-              <Link href="/contact">
-                <button className="bg-accent hover:bg-accent/90 text-primary px-8 py-3 rounded-full font-heading font-medium transition-colors inline-block w-full sm:w-auto text-center shadow-lg shadow-accent/20">
-                  Request Press Kit / Contact
-                </button>
+              <Link
+                href="/contact"
+                className="bg-accent hover:bg-accent/90 text-primary px-8 py-3 rounded-full font-heading font-medium transition-colors inline-block w-full sm:w-auto text-center shadow-lg shadow-accent/20"
+              >
+                Request Press Kit / Contact
               </Link>
             </div>
           </section>
