@@ -33,6 +33,21 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // Lock body scroll when mobile menu is open
+  useEffect(() => {
+    if (isMobileMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => { document.body.style.overflow = ''; };
+  }, [isMobileMenuOpen]);
+
+  // Close mobile menu on route change
+  useEffect(() => {
+    setIsMobileMenuOpen(false);
+  }, [pathname]);
+
   const isActive = (path) => pathname === path;
 
   return (
@@ -115,18 +130,18 @@ export default function Navbar() {
 
       {/* Mobile Menu Overlay */}
       <div
-        className={`fixed inset-0 bg-primary-light/98 dark:bg-primary/98 backdrop-blur-xl z-40 lg:hidden flex flex-col items-center overflow-y-auto pt-24 pb-12 transition-transform duration-300 ease-in-out ${
+        className={`fixed inset-0 bg-primary-light/98 backdrop-blur-xl z-40 lg:hidden flex flex-col items-center justify-center overflow-y-auto pt-20 pb-8 transition-transform duration-300 ease-in-out ${
           isMobileMenuOpen ? 'translate-x-0 opacity-100' : 'translate-x-full opacity-0 pointer-events-none'
         }`}
       >
-        <div className="flex flex-col items-center gap-4 w-full max-w-xs px-6 my-auto">
+        <div className="flex flex-col items-center gap-3 w-full max-w-xs px-6">
           {[...MAIN_LINKS, ...MORE_LINKS].map((link) => (
             <Link
               key={link.href}
               href={link.href}
               onClick={() => setIsMobileMenuOpen(false)}
-              className={`text-xl font-heading font-semibold tracking-wide py-1.5 transition-colors ${
-                isActive(link.href) ? 'text-accent border-b-2 border-accent' : 'text-text-dark dark:text-text hover:text-accent'
+              className={`text-lg font-heading font-semibold tracking-wide py-1.5 transition-colors ${
+                isActive(link.href) ? 'text-accent border-b-2 border-accent' : 'text-text-dark hover:text-accent'
               }`}
             >
               {link.label}
@@ -135,7 +150,7 @@ export default function Navbar() {
           <Link
             href="/contact"
             onClick={() => setIsMobileMenuOpen(false)}
-            className="mt-4 bg-accent text-primary px-8 py-3 rounded-xl text-base font-bold hover:bg-accent-hover transition-colors w-full text-center shadow-md"
+            className="mt-3 bg-accent text-primary px-8 py-3 rounded-xl text-base font-bold hover:bg-accent-hover transition-colors w-full text-center shadow-md"
           >
             Get in Touch
           </Link>
