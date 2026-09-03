@@ -65,6 +65,11 @@ const nextConfig = {
         destination: '/teaching',
         permanent: true,
       },
+      {
+        source: '/articles/:category/:slug',
+        destination: '/articles/:slug',
+        permanent: false,
+      },
     ];
   },
   images: {
