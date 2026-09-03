@@ -3,8 +3,7 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { useTheme } from 'next-themes';
-import { FiMenu, FiX, FiSun, FiMoon, FiChevronDown } from 'react-icons/fi';
+import { FiMenu, FiX, FiChevronDown } from 'react-icons/fi';
 
 const MAIN_LINKS = [
   { label: 'Home', href: '/' },
@@ -27,18 +26,14 @@ export default function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isMoreOpen, setIsMoreOpen] = useState(false);
   const pathname = usePathname();
-  const { theme, setTheme, systemTheme } = useTheme();
-  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
-    setMounted(true);
     const handleScroll = () => setIsScrolled(window.scrollY > 20);
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   const isActive = (path) => pathname === path;
-  const currentTheme = theme === 'system' ? systemTheme : theme;
 
   return (
     <nav
@@ -104,31 +99,14 @@ export default function Navbar() {
           >
             Contact
           </Link>
-          
-          {mounted && (
-            <button
-              onClick={() => setTheme(currentTheme === 'dark' ? 'light' : 'dark')}
-              className="p-2 rounded-full hover:bg-accent/10 text-text-dark dark:text-text hover:text-accent transition-colors"
-              aria-label="Toggle Dark Mode"
-            >
-              {currentTheme === 'dark' ? <FiSun size={18} /> : <FiMoon size={18} />}
-            </button>
-          )}
         </div>
 
-        {/* Mobile Toggle */}
-        <div className="lg:hidden flex items-center gap-4 z-50">
-          {mounted && (
-            <button
-              onClick={() => setTheme(currentTheme === 'dark' ? 'light' : 'dark')}
-              className="p-2 rounded-full hover:bg-accent/10 text-text-dark dark:text-text hover:text-accent transition-colors"
-            >
-              {currentTheme === 'dark' ? <FiSun size={20} /> : <FiMoon size={20} />}
-            </button>
-          )}
+        {/* Mobile Menu Button */}
+        <div className="lg:hidden flex items-center z-50">
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             className="text-text-dark dark:text-text hover:text-accent transition-colors p-1"
+            aria-label="Toggle Menu"
           >
             {isMobileMenuOpen ? <FiX size={24} /> : <FiMenu size={24} />}
           </button>

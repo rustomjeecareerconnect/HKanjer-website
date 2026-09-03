@@ -58,7 +58,7 @@ export default function RootLayout({ children }) {
       suppressHydrationWarning
       className={`${inter.variable} ${playfair.variable} ${lora.variable}`}
     >
-      <body className="font-body bg-primary-light dark:bg-primary text-text-dark dark:text-text antialiased transition-colors duration-300">
+      <body className="font-body bg-primary-light text-text-dark antialiased">
         <ThemeProvider>
           <Navbar />
           <main className="min-h-screen">{children}</main>
