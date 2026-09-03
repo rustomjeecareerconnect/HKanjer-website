@@ -6,7 +6,7 @@ import Link from 'next/link';
 import { articles } from '@/lib/data/articles';
 import ScrollAnimation from '@/components/ScrollAnimation';
 
-const CATEGORIES = ['All', 'Management', 'From My Diary'];
+const CATEGORIES = ['All', 'Leadership', 'Education', 'Management', 'Ed-Tech', 'Society'];
 
 export default function ArticlesIndex() {
   const [activeCategory, setActiveCategory] = useState('All');
@@ -20,11 +20,11 @@ export default function ArticlesIndex() {
       <div className="container-custom">
         <div className="page-hero text-center mb-16">
           <ScrollAnimation>
-            <h1 className="font-heading text-4xl md:text-5xl text-text-dark mb-4">
+            <h1 className="font-heading text-4xl md:text-5xl text-text-dark mb-4 font-bold">
               Articles & Thought Leadership
             </h1>
             <p className="text-text-dark-muted text-lg max-w-2xl mx-auto">
-              Essays, management insights, and personal diary reflections by Dr. Hanif Kanjer.
+              Essays, management insights, and reflections by Dr. Hanif Kanjer, organized by topic.
             </p>
           </ScrollAnimation>
         </div>
@@ -36,10 +36,10 @@ export default function ArticlesIndex() {
               <button
                 key={category}
                 onClick={() => setActiveCategory(category)}
-                className={`px-5 py-2 rounded-full text-sm font-body transition-colors duration-300 ${
+                className={`px-5 py-2 rounded-full text-sm font-body transition-all duration-200 ${
                   activeCategory === category
-                    ? 'bg-accent text-primary font-semibold shadow-sm'
-                    : 'bg-surface-light text-text-dark hover:text-accent-hover border border-accent/20'
+                    ? 'bg-accent text-primary font-semibold shadow-md scale-105'
+                    : 'bg-surface-light text-text-dark hover:text-accent-hover hover:border-accent border border-accent/20 shadow-sm'
                 }`}
               >
                 {category}
