@@ -1,7 +1,8 @@
 'use client';
 
 import { useState } from 'react';
-import { FaLinkedin, FaResearchgate, FaAmazon, FaGraduationCap, FaEnvelope, FaMapMarkerAlt, FaCheckCircle, FaExclamationCircle, FaSpinner, FaChartLine } from 'react-icons/fa';
+import { FaLinkedin, FaResearchgate, FaEnvelope, FaMapMarkerAlt, FaCheckCircle, FaExclamationCircle, FaSpinner, FaChartLine } from 'react-icons/fa';
+import { SiGooglescholar } from 'react-icons/si';
 import ScrollAnimation from '@/components/ScrollAnimation';
 
 export default function ContactPage() {
@@ -22,16 +23,16 @@ export default function ContactPage() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setStatus('submitting');
-    
+
     try {
       const res = await fetch('/api/contact', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData)
       });
-      
+
       const data = await res.json();
-      
+
       if (res.ok) {
         setStatus('success');
         setFormData({ name: '', email: '', subject: 'General Inquiry', message: '', _gotcha: '' });
@@ -60,19 +61,19 @@ export default function ContactPage() {
         </div>
 
         <div className="flex flex-col lg:flex-row gap-12">
-          
+
           {/* Contact Form */}
           <div className="w-full lg:w-3/5">
             <ScrollAnimation delay={0.1}>
               <div className="card-base bg-surface-light dark:bg-surface p-8 md:p-10">
                 <h2 className="font-heading text-2xl text-text-dark dark:text-text mb-8">Send a Message</h2>
-                
+
                 {status === 'success' ? (
                   <div className="bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-800 rounded-xl p-8 text-center flex flex-col items-center">
                     <FaCheckCircle className="text-4xl text-green-500 mb-4" />
                     <h3 className="font-heading text-xl text-green-800 dark:text-green-400 mb-2">Thank you!</h3>
                     <p className="text-green-700 dark:text-green-300">Your message has been sent successfully. We will get back to you soon.</p>
-                    <button 
+                    <button
                       onClick={() => setStatus('idle')}
                       className="mt-6 text-accent hover:text-accent-hover font-medium underline"
                     >
@@ -121,7 +122,7 @@ export default function ContactPage() {
                         />
                       </div>
                     </div>
-                    
+
                     <div>
                       <label htmlFor="subject" className="block text-sm font-medium text-text-dark-muted dark:text-text-muted mb-2">Subject *</label>
                       <select
@@ -183,7 +184,7 @@ export default function ContactPage() {
             <ScrollAnimation delay={0.2}>
               <div className="card-base bg-accent/5 dark:bg-accent/10 border-accent/20 p-8 md:p-10 h-full flex flex-col">
                 <h3 className="font-heading text-xl text-text-dark dark:text-text mb-6">Contact Information</h3>
-                
+
                 <div className="space-y-6 flex-grow">
                   <div className="flex items-start gap-4">
                     <div className="mt-1 p-2 bg-surface-light dark:bg-surface rounded-lg text-accent">
@@ -197,7 +198,7 @@ export default function ContactPage() {
                       </p>
                     </div>
                   </div>
-                  
+
                   <div className="flex items-start gap-4">
                     <div className="mt-1 p-2 bg-surface-light dark:bg-surface rounded-lg text-accent">
                       <FaEnvelope size={18} />
@@ -205,7 +206,7 @@ export default function ContactPage() {
                     <div>
                       <h4 className="font-heading font-medium text-text-dark dark:text-text mb-1">Email</h4>
                       <p className="text-text-dark-muted dark:text-text-muted text-sm">
-                        info@hanifkanjer.com
+                        [hkanjer@gmail.com]
                       </p>
                     </div>
                   </div>
@@ -216,13 +217,13 @@ export default function ContactPage() {
                 <div>
                   <h4 className="font-heading font-medium text-text-dark dark:text-text mb-4">Professional Links</h4>
                   <div className="flex gap-4">
-                    <a href="https://www.linkedin.com/in/hanifkanjer" target="_blank" rel="noopener noreferrer" className="p-3 bg-surface-light dark:bg-surface border border-accent/10 rounded-xl text-text-dark-muted dark:text-text-muted hover:text-[#0A66C2] hover:border-accent/30 transition-all shadow-sm hover:shadow-md" title="LinkedIn Profile">
+                    <a href="https://www.linkedin.com/in/hanifkanjer" target="_blank" rel="noopener noreferrer" className="p-3 bg-surface-light dark:bg-surface border border-accent/10 rounded-xl text-[#0A66C2] hover:border-accent/30 transition-all shadow-sm hover:shadow-md" title="LinkedIn Profile" aria-label="LinkedIn Profile">
                       <FaLinkedin size={22} />
                     </a>
-                    <a href="https://scholar.google.com/citations?user=X8OOo2wAAAAJ&hl=en&oi=ao" target="_blank" rel="noopener noreferrer" className="p-3 bg-surface-light dark:bg-surface border border-accent/10 rounded-xl text-text-dark-muted dark:text-text-muted hover:text-accent hover:border-accent/30 transition-all shadow-sm hover:shadow-md" title="Google Scholar">
-                      <FaGraduationCap size={22} />
+                    <a href="https://scholar.google.com/citations?user=X8OOo2wAAAAJ&hl=en&oi=ao" target="_blank" rel="noopener noreferrer" className="p-3 bg-surface-light dark:bg-surface border border-accent/10 rounded-xl text-[#4285F4] hover:border-accent/30 transition-all shadow-sm hover:shadow-md" title="Google Scholar" aria-label="Google Scholar">
+                      <SiGooglescholar size={22} />
                     </a>
-                    <a href="https://www.researchgate.net/profile/Hanif-Kanjer" target="_blank" rel="noopener noreferrer" className="p-3 bg-surface-light dark:bg-surface border border-accent/10 rounded-xl text-text-dark-muted dark:text-text-muted hover:text-[#00CCBB] hover:border-accent/30 transition-all shadow-sm hover:shadow-md" title="ResearchGate">
+                    <a href="https://www.researchgate.net/profile/Hanif-Kanjer" target="_blank" rel="noopener noreferrer" className="p-3 bg-surface-light dark:bg-surface border border-accent/10 rounded-xl text-[#00CCBB] hover:border-accent/30 transition-all shadow-sm hover:shadow-md" title="ResearchGate" aria-label="ResearchGate">
                       <FaResearchgate size={22} />
                     </a>
                   </div>

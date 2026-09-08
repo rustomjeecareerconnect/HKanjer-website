@@ -166,7 +166,7 @@ export default async function ArticleDetail({ params }) {
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label="Share on X / Twitter"
-                    className="text-text-dark-muted hover:text-[#1DA1F2] transition-colors p-2 bg-surface-light border border-accent/15 rounded-full shadow-xs"
+                    className="text-[#1DA1F2] hover:opacity-80 transition-opacity p-2 bg-surface-light border border-accent/15 rounded-full shadow-xs"
                   >
                     <FaTwitter size={18} />
                   </a>
@@ -175,7 +175,7 @@ export default async function ArticleDetail({ params }) {
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label="Share on LinkedIn"
-                    className="text-text-dark-muted hover:text-[#0A66C2] transition-colors p-2 bg-surface-light border border-accent/15 rounded-full shadow-xs"
+                    className="text-[#0A66C2] hover:opacity-80 transition-opacity p-2 bg-surface-light border border-accent/15 rounded-full shadow-xs"
                   >
                     <FaLinkedin size={18} />
                   </a>
@@ -184,7 +184,7 @@ export default async function ArticleDetail({ params }) {
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label="Share on WhatsApp"
-                    className="text-text-dark-muted hover:text-[#25D366] transition-colors p-2 bg-surface-light border border-accent/15 rounded-full shadow-xs"
+                    className="text-[#25D366] hover:opacity-80 transition-opacity p-2 bg-surface-light border border-accent/15 rounded-full shadow-xs"
                   >
                     <FaWhatsapp size={18} />
                   </a>

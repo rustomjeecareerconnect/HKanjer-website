@@ -1,5 +1,6 @@
 import Link from 'next/link';
-import { FaLinkedin, FaGraduationCap, FaResearchgate, FaAmazon } from 'react-icons/fa';
+import { FaLinkedin, FaResearchgate, FaAmazon } from 'react-icons/fa';
+import { SiGooglescholar } from 'react-icons/si';
 
 export default function Footer() {
   return (
@@ -15,16 +16,16 @@ export default function Footer() {
               Academician, Management Consultant, Corporate Advisor, Bestselling Author, and Farmer. Dedicated to excellence in education and leadership.
             </p>
             <div className="flex gap-4 mt-2">
-              <a href="https://www.linkedin.com/in/hanifkanjer" target="_blank" rel="noopener noreferrer" className="text-text-dark-muted dark:text-text-muted hover:text-[#0A66C2] transition-colors" aria-label="LinkedIn Profile" title="LinkedIn Profile">
+              <a href="https://www.linkedin.com/in/hanifkanjer" target="_blank" rel="noopener noreferrer" className="text-[#0A66C2] hover:opacity-80 transition-opacity" aria-label="LinkedIn Profile" title="LinkedIn Profile">
                 <FaLinkedin size={22} />
               </a>
-              <a href="https://scholar.google.com/citations?user=X8OOo2wAAAAJ&hl=en&oi=ao" target="_blank" rel="noopener noreferrer" className="text-text-dark-muted dark:text-text-muted hover:text-accent transition-colors" aria-label="Google Scholar Profile" title="Google Scholar">
-                <FaGraduationCap size={22} />
+              <a href="https://scholar.google.com/citations?user=X8OOo2wAAAAJ&hl=en&oi=ao" target="_blank" rel="noopener noreferrer" className="text-[#4285F4] hover:opacity-80 transition-opacity" aria-label="Google Scholar Profile" title="Google Scholar">
+                <SiGooglescholar size={22} />
               </a>
-              <a href="https://www.researchgate.net/profile/Hanif-Kanjer" target="_blank" rel="noopener noreferrer" className="text-text-dark-muted dark:text-text-muted hover:text-accent transition-colors" aria-label="ResearchGate Profile" title="ResearchGate">
+              <a href="https://www.researchgate.net/profile/Hanif-Kanjer" target="_blank" rel="noopener noreferrer" className="text-[#00CCBB] hover:opacity-80 transition-opacity" aria-label="ResearchGate Profile" title="ResearchGate">
                 <FaResearchgate size={22} />
               </a>
-              <a href="https://www.amazon.in/All-Right-Answers-Hanif-Kanjer/dp/1403929173" target="_blank" rel="noopener noreferrer" className="text-text-dark-muted dark:text-text-muted hover:text-accent transition-colors" aria-label="Amazon Author & Books" title="Amazon Author & Books">
+              <a href="https://www.amazon.in/All-Right-Answers-Hanif-Kanjer/dp/1403929173" target="_blank" rel="noopener noreferrer" className="text-[#FF9900] hover:opacity-80 transition-opacity" aria-label="Amazon Author & Books" title="Amazon Author & Books">
                 <FaAmazon size={22} />
               </a>
             </div>

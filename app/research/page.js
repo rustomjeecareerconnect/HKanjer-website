@@ -1,5 +1,6 @@
 import Link from 'next/link';
-import { FaGoogle, FaResearchgate, FaBook, FaChartPie, FaUniversity, FaBalanceScale } from 'react-icons/fa';
+import { FaResearchgate, FaBook, FaChartPie, FaUniversity, FaBalanceScale } from 'react-icons/fa';
+import { SiGooglescholar } from 'react-icons/si';
 import ScrollAnimation from '@/components/ScrollAnimation';
 
 export const metadata = {
@@ -56,13 +57,13 @@ export default function ResearchPage() {
               rel="noopener noreferrer"
               className="flex items-center gap-6 p-8 glass-card border-2 border-accent/30 hover:border-accent rounded-2xl transition-all duration-300 hover:-translate-y-1 group shadow-lg"
             >
-              <div className="w-16 h-16 rounded-full bg-secondary-light dark:bg-secondary flex items-center justify-center flex-shrink-0 group-hover:bg-accent transition-colors duration-300">
-                <FaGoogle className="text-3xl text-accent group-hover:text-primary-light" />
+              <div className="w-16 h-16 rounded-full bg-secondary-light dark:bg-secondary flex items-center justify-center flex-shrink-0 shadow-inner">
+                <SiGooglescholar className="text-3xl text-[#4285F4]" />
               </div>
               <div className="flex-grow">
                 <div className="flex items-center justify-between">
                   <h3 className="text-xl font-heading text-text-dark dark:text-text font-bold mb-1">Google Scholar</h3>
-                  <span className="text-xs font-mono text-accent opacity-80 group-hover:opacity-100">Live Profile &rarr;</span>
+                  <span className="text-xs font-mono text-[#4285F4] opacity-90">Live Profile &rarr;</span>
                 </div>
                 <p className="text-sm text-text-dark-muted dark:text-text-muted">
                   Official Google Scholar profile with verified academic citations, publications, and metrics.
@@ -77,13 +78,13 @@ export default function ResearchPage() {
               rel="noopener noreferrer"
               className="flex items-center gap-6 p-8 glass-card border-2 border-accent/30 hover:border-accent rounded-2xl transition-all duration-300 hover:-translate-y-1 group shadow-lg"
             >
-              <div className="w-16 h-16 rounded-full bg-secondary-light dark:bg-secondary flex items-center justify-center flex-shrink-0 group-hover:bg-accent transition-colors duration-300">
-                <FaResearchgate className="text-3xl text-accent group-hover:text-primary-light" />
+              <div className="w-16 h-16 rounded-full bg-secondary-light dark:bg-secondary flex items-center justify-center flex-shrink-0 shadow-inner">
+                <FaResearchgate className="text-3xl text-[#00CCBB]" />
               </div>
               <div className="flex-grow">
                 <div className="flex items-center justify-between">
                   <h3 className="text-xl font-heading text-text-dark dark:text-text font-bold mb-1">ResearchGate</h3>
-                  <span className="text-xs font-mono text-accent opacity-80 group-hover:opacity-100">Live Profile &rarr;</span>
+                  <span className="text-xs font-mono text-[#00CCBB] opacity-90">Live Profile &rarr;</span>
                 </div>
                 <p className="text-sm text-text-dark-muted dark:text-text-muted">
                   Direct scholarly profile on ResearchGate for peer interactions and indexed research records.
